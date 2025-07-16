@@ -1,0 +1,556 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		808171A22E278C3F00A0F2D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8081718B2E278C3E00A0F2D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 808171922E278C3E00A0F2D2;
+			remoteInfo = MicSwitcher;
+		};
+		808171AC2E278C3F00A0F2D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8081718B2E278C3E00A0F2D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 808171922E278C3E00A0F2D2;
+			remoteInfo = MicSwitcher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		808171932E278C3E00A0F2D2 /* MicSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		808171A12E278C3F00A0F2D2 /* MicSwitcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MicSwitcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		808171AB2E278C3F00A0F2D2 /* MicSwitcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MicSwitcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		808171952E278C3E00A0F2D2 /* MicSwitcher */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MicSwitcher;
+			sourceTree = "<group>";
+		};
+		808171A42E278C3F00A0F2D2 /* MicSwitcherTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MicSwitcherTests;
+			sourceTree = "<group>";
+		};
+		808171AE2E278C3F00A0F2D2 /* MicSwitcherUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MicSwitcherUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		808171902E278C3E00A0F2D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8081719E2E278C3F00A0F2D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		808171A82E278C3F00A0F2D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8081718A2E278C3E00A0F2D2 = {
+			isa = PBXGroup;
+			children = (
+				808171952E278C3E00A0F2D2 /* MicSwitcher */,
+				808171A42E278C3F00A0F2D2 /* MicSwitcherTests */,
+				808171AE2E278C3F00A0F2D2 /* MicSwitcherUITests */,
+				808171942E278C3E00A0F2D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		808171942E278C3E00A0F2D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				808171932E278C3E00A0F2D2 /* MicSwitcher.app */,
+				808171A12E278C3F00A0F2D2 /* MicSwitcherTests.xctest */,
+				808171AB2E278C3F00A0F2D2 /* MicSwitcherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		808171922E278C3E00A0F2D2 /* MicSwitcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 808171B52E278C3F00A0F2D2 /* Build configuration list for PBXNativeTarget "MicSwitcher" */;
+			buildPhases = (
+				8081718F2E278C3E00A0F2D2 /* Sources */,
+				808171902E278C3E00A0F2D2 /* Frameworks */,
+				808171912E278C3E00A0F2D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				808171952E278C3E00A0F2D2 /* MicSwitcher */,
+			);
+			name = MicSwitcher;
+			packageProductDependencies = (
+			);
+			productName = MicSwitcher;
+			productReference = 808171932E278C3E00A0F2D2 /* MicSwitcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		808171A02E278C3F00A0F2D2 /* MicSwitcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 808171B82E278C3F00A0F2D2 /* Build configuration list for PBXNativeTarget "MicSwitcherTests" */;
+			buildPhases = (
+				8081719D2E278C3F00A0F2D2 /* Sources */,
+				8081719E2E278C3F00A0F2D2 /* Frameworks */,
+				8081719F2E278C3F00A0F2D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				808171A32E278C3F00A0F2D2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				808171A42E278C3F00A0F2D2 /* MicSwitcherTests */,
+			);
+			name = MicSwitcherTests;
+			packageProductDependencies = (
+			);
+			productName = MicSwitcherTests;
+			productReference = 808171A12E278C3F00A0F2D2 /* MicSwitcherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		808171AA2E278C3F00A0F2D2 /* MicSwitcherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 808171BB2E278C3F00A0F2D2 /* Build configuration list for PBXNativeTarget "MicSwitcherUITests" */;
+			buildPhases = (
+				808171A72E278C3F00A0F2D2 /* Sources */,
+				808171A82E278C3F00A0F2D2 /* Frameworks */,
+				808171A92E278C3F00A0F2D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				808171AD2E278C3F00A0F2D2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				808171AE2E278C3F00A0F2D2 /* MicSwitcherUITests */,
+			);
+			name = MicSwitcherUITests;
+			packageProductDependencies = (
+			);
+			productName = MicSwitcherUITests;
+			productReference = 808171AB2E278C3F00A0F2D2 /* MicSwitcherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8081718B2E278C3E00A0F2D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
+				TargetAttributes = {
+					808171922E278C3E00A0F2D2 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					808171A02E278C3F00A0F2D2 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 808171922E278C3E00A0F2D2;
+					};
+					808171AA2E278C3F00A0F2D2 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 808171922E278C3E00A0F2D2;
+					};
+				};
+			};
+			buildConfigurationList = 8081718E2E278C3E00A0F2D2 /* Build configuration list for PBXProject "MicSwitcher" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8081718A2E278C3E00A0F2D2;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 808171942E278C3E00A0F2D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				808171922E278C3E00A0F2D2 /* MicSwitcher */,
+				808171A02E278C3F00A0F2D2 /* MicSwitcherTests */,
+				808171AA2E278C3F00A0F2D2 /* MicSwitcherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		808171912E278C3E00A0F2D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8081719F2E278C3F00A0F2D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		808171A92E278C3F00A0F2D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8081718F2E278C3E00A0F2D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8081719D2E278C3F00A0F2D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		808171A72E278C3F00A0F2D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		808171A32E278C3F00A0F2D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 808171922E278C3E00A0F2D2 /* MicSwitcher */;
+			targetProxy = 808171A22E278C3F00A0F2D2 /* PBXContainerItemProxy */;
+		};
+		808171AD2E278C3F00A0F2D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 808171922E278C3E00A0F2D2 /* MicSwitcher */;
+			targetProxy = 808171AC2E278C3F00A0F2D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		808171B32E278C3F00A0F2D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3R46P8ZNKW;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		808171B42E278C3F00A0F2D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3R46P8ZNKW;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		808171B62E278C3F00A0F2D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MicSwitcher/MicSwitcher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3R46P8ZNKW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.curasystems.MicSwitcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		808171B72E278C3F00A0F2D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MicSwitcher/MicSwitcher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3R46P8ZNKW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.curasystems.MicSwitcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		808171B92E278C3F00A0F2D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3R46P8ZNKW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.curasystems.MicSwitcherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MicSwitcher.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MicSwitcher";
+			};
+			name = Debug;
+		};
+		808171BA2E278C3F00A0F2D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3R46P8ZNKW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.curasystems.MicSwitcherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MicSwitcher.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MicSwitcher";
+			};
+			name = Release;
+		};
+		808171BC2E278C3F00A0F2D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3R46P8ZNKW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.curasystems.MicSwitcherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MicSwitcher;
+			};
+			name = Debug;
+		};
+		808171BD2E278C3F00A0F2D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3R46P8ZNKW;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.curasystems.MicSwitcherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = MicSwitcher;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8081718E2E278C3E00A0F2D2 /* Build configuration list for PBXProject "MicSwitcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				808171B32E278C3F00A0F2D2 /* Debug */,
+				808171B42E278C3F00A0F2D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		808171B52E278C3F00A0F2D2 /* Build configuration list for PBXNativeTarget "MicSwitcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				808171B62E278C3F00A0F2D2 /* Debug */,
+				808171B72E278C3F00A0F2D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		808171B82E278C3F00A0F2D2 /* Build configuration list for PBXNativeTarget "MicSwitcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				808171B92E278C3F00A0F2D2 /* Debug */,
+				808171BA2E278C3F00A0F2D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		808171BB2E278C3F00A0F2D2 /* Build configuration list for PBXNativeTarget "MicSwitcherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				808171BC2E278C3F00A0F2D2 /* Debug */,
+				808171BD2E278C3F00A0F2D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8081718B2E278C3E00A0F2D2 /* Project object */;
+}
