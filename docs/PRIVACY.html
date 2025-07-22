@@ -106,14 +106,16 @@
         <p class="date">Last updated: July 22, 2025</p>
         
         <h2>Overview</h2>
-        <p>MicSwitcher is committed to protecting your privacy. This privacy policy explains what information we collect, how we use it, and your rights regarding your data.</p>
+        <p>MicSwitcher is committed to protecting your privacy. This privacy policy explains what information the app collects, how its used, and your rights regarding your data.</p>
         
         <h2>Information We Collect</h2>
         
         <h3>Anonymous Telemetry Data (Optional)</h3>
-        <p>When telemetry is enabled, MicSwitcher collects anonymous usage metrics to help improve the application. This feature is <strong>disabled by default</strong> and requires explicit opt-in.</p>
+        <p>When telemetry is enabled, MicSwitcher sends anonymous usage metrics to help improve the application. This feature is <strong>disabled by default</strong> and requires explicit opt-in. By default it targets a local opentelemetry-collector such as https://github.com/open-telemetry/opentelemetry-collector which most people would not even have running, but you can specify any you like. I do not collect any data at all.</p>
         
-        <p><strong>What we collect:</strong></p>
+        <p>Honestly it is only included because my enterprise apps always have it and every app should have it. Maybe it will inspire people to add it to their apps.</p>
+        
+        <p><strong>What the app sends to the opentelemetry server:</strong></p>
         <ul>
             <li>Application events (launches, settings opened)</li>
             <li>Microphone switching statistics (manual/automatic switches)</li>
@@ -121,7 +123,8 @@
             <li>Anonymous device identifier (hashed, non-reversible)</li>
         </ul>
         
-        <p><strong>What we DO NOT collect:</strong></p>
+        <p><strong>What is NOT collected:</strong></p>
+        <p>The app does not "collect" any information as its entirely up to the user to say where to send the data to and it defaults to localhost. But inside the metrics the app also do not collect:</p>
         <ul>
             <li>Personal information</li>
             <li>Microphone names or models</li>
@@ -133,14 +136,13 @@
         
         <h3>Technical Implementation</h3>
         <ul>
-            <li>All telemetry data is sent to a self-hosted OpenTelemetry collector</li>
-            <li>Data is transmitted over HTTPS</li>
+            <li>All telemetry data is sent to a user provided self-hosted OpenTelemetry collector</li>
             <li>No third-party analytics services are used</li>
             <li>Device IDs are one-way hashed and cannot be reversed</li>
         </ul>
         
-        <h2>How We Use Information</h2>
-        <p>Collected metrics are used solely to:</p>
+        <h2>How Can The Information Used</h2>
+        <p>Collected metrics can be used by the provider of the opentelemetry target to:</p>
         <ul>
             <li>Understand feature usage patterns</li>
             <li>Identify and fix bugs</li>
@@ -150,10 +152,9 @@
         
         <h2>Data Storage and Retention</h2>
         <ul>
-            <li>Telemetry data is stored on self-hosted infrastructure</li>
-            <li>Data is retained for a maximum of 90 days</li>
-            <li>No data is shared with third parties</li>
-            <li>No data is sold or used for advertising</li>
+            <li>Telemetry data is stored on user provided self-hosted infrastructure</li>
+            <li>No data is shared with third parties as I do not collect it</li>
+            <li>No data is sold or used for advertising as I do not collect it</li>
         </ul>
         
         <h2>Your Rights and Controls</h2>
@@ -163,6 +164,7 @@
             <li><strong>Enable/Disable</strong>: Toggle telemetry at any time in Advanced Settings</li>
             <li><strong>Selective Tracking</strong>: Choose which metrics to share</li>
             <li><strong>Local Processing</strong>: All microphone operations happen locally on your device</li>
+            <li><strong>User Provided</strong>: The telemetry is stored on the user provided target only</li>
         </ol>
         
         <h2>Local Data Storage</h2>
@@ -172,7 +174,7 @@
             <li>Application settings</li>
             <li>Device history (for auto-switching)</li>
         </ul>
-        <p>This data never leaves your device unless telemetry is explicitly enabled.</p>
+        <p>This data never leaves your device.</p>
         
         <h2>Children's Privacy</h2>
         <p>MicSwitcher does not knowingly collect information from children under 13 years of age.</p>
@@ -181,7 +183,7 @@
         <p>We may update this privacy policy from time to time. Changes will be posted to this page with an updated revision date.</p>
         
         <h2>Contact</h2>
-        <p>For questions about this privacy policy or MicSwitcher's privacy practices, please create an issue on our <a href="https://github.com/matthiasg/mic-switcher">GitHub repository</a>.</p>
+        <p>For questions about this privacy policy or MicSwitcher's privacy practices, please create an issue on our <a href="https://github.com/matthiasg/MicSwitcher">GitHub repository</a>.</p>
         
         <h2>Compliance</h2>
         <p>MicSwitcher is designed to comply with:</p>
