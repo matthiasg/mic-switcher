@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicSwitcher - Smart Microphone Management for macOS</title>
+    <meta name="description" content="Effortlessly switch between microphones on macOS with smart auto-switching and priority management.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f7;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: #fff;
+            padding: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #0071e3;
+        }
+        
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #fff;
+            color: #667eea;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .features {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: #1d1d1f;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #1d1d1f;
+        }
+        
+        .feature p {
+            color: #6e6e73;
+            line-height: 1.8;
+        }
+        
+        .privacy {
+            padding: 60px 0;
+            background: #f5f5f7;
+            text-align: center;
+        }
+        
+        .privacy h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #1d1d1f;
+        }
+        
+        .privacy p {
+            font-size: 18px;
+            color: #6e6e73;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .privacy-link {
+            color: #0071e3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .privacy-link:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background: #1d1d1f;
+            color: #f5f5f7;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #f5f5f7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #0071e3;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .nav-links a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">🎙️ MicSwitcher</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+                <li><a href="https://github.com/matthiasg/mic-switcher">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Smart Microphone Management for macOS</h1>
+            <p>Effortlessly switch between microphones with intelligent auto-switching and priority management</p>
+            <a href="#" class="cta-button">Download on the App Store</a>
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Auto-Switch</h3>
+                    <p>Automatically switches to your preferred microphone when it becomes available. Perfect for when you connect your favorite headset.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📋</div>
+                    <h3>Priority Management</h3>
+                    <p>Set your microphone preferences in order. MicSwitcher remembers and respects your priority list.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Smart Notifications</h3>
+                    <p>Get notified when microphones are connected, disconnected, or switched. Stay informed about your audio setup.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Menu Bar Access</h3>
+                    <p>Quick access from your menu bar. Switch microphones with just two clicks, no need to dig through system preferences.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Privacy First</h3>
+                    <p>Your privacy matters. All operations happen locally on your Mac. Anonymous telemetry is opt-in only.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightweight</h3>
+                    <p>Minimal resource usage. MicSwitcher runs quietly in the background without affecting your Mac's performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="privacy" id="privacy">
+        <div class="container">
+            <h2>Your Privacy Matters</h2>
+            <p>MicSwitcher is designed with privacy in mind. All microphone operations happen locally on your device. Anonymous telemetry is disabled by default and requires explicit opt-in.</p>
+            <a href="PRIVACY.html" class="privacy-link">Read our Privacy Policy →</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="PRIVACY.html">Privacy Policy</a>
+                <a href="https://github.com/matthiasg/mic-switcher">Source Code</a>
+                <a href="https://github.com/matthiasg/mic-switcher/issues">Support</a>
+            </div>
+            <p>© 2025 Matthias Götzke. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

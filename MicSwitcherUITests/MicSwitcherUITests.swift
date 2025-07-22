@@ -2,7 +2,7 @@
 //  MicSwitcherUITests.swift
 //  MicSwitcherUITests
 //
-//  Created by Matthias Goetzke on 16.07.25.
+//  Created by Matthias Götzke on 16.07.25.
 //
 
 import XCTest

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - MicSwitcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f7;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #fff;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1d1d1f;
+        }
+        
+        h2 {
+            font-size: 28px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #1d1d1f;
+        }
+        
+        h3 {
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1d1d1f;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #6e6e73;
+            line-height: 1.8;
+        }
+        
+        ul {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            color: #6e6e73;
+        }
+        
+        strong {
+            color: #1d1d1f;
+        }
+        
+        .date {
+            font-style: italic;
+            color: #6e6e73;
+            margin-bottom: 30px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #0071e3;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        hr {
+            margin: 40px 0;
+            border: none;
+            border-top: 1px solid #e5e5e7;
+        }
+        
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e5e7;
+            text-align: center;
+            color: #6e6e73;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to MicSwitcher</a>
+        
+        <h1>Privacy Policy for MicSwitcher</h1>
+        <p class="date">Last updated: July 22, 2025</p>
+        
+        <h2>Overview</h2>
+        <p>MicSwitcher is committed to protecting your privacy. This privacy policy explains what information we collect, how we use it, and your rights regarding your data.</p>
+        
+        <h2>Information We Collect</h2>
+        
+        <h3>Anonymous Telemetry Data (Optional)</h3>
+        <p>When telemetry is enabled, MicSwitcher collects anonymous usage metrics to help improve the application. This feature is <strong>disabled by default</strong> and requires explicit opt-in.</p>
+        
+        <p><strong>What we collect:</strong></p>
+        <ul>
+            <li>Application events (launches, settings opened)</li>
+            <li>Microphone switching statistics (manual/automatic switches)</li>
+            <li>Device count metrics (number of connected microphones)</li>
+            <li>Anonymous device identifier (hashed, non-reversible)</li>
+        </ul>
+        
+        <p><strong>What we DO NOT collect:</strong></p>
+        <ul>
+            <li>Personal information</li>
+            <li>Microphone names or models</li>
+            <li>Audio data or recordings</li>
+            <li>Location information</li>
+            <li>Network information</li>
+            <li>User identifiable information</li>
+        </ul>
+        
+        <h3>Technical Implementation</h3>
+        <ul>
+            <li>All telemetry data is sent to a self-hosted OpenTelemetry collector</li>
+            <li>Data is transmitted over HTTPS</li>
+            <li>No third-party analytics services are used</li>
+            <li>Device IDs are one-way hashed and cannot be reversed</li>
+        </ul>
+        
+        <h2>How We Use Information</h2>
+        <p>Collected metrics are used solely to:</p>
+        <ul>
+            <li>Understand feature usage patterns</li>
+            <li>Identify and fix bugs</li>
+            <li>Improve application performance</li>
+            <li>Guide future development</li>
+        </ul>
+        
+        <h2>Data Storage and Retention</h2>
+        <ul>
+            <li>Telemetry data is stored on self-hosted infrastructure</li>
+            <li>Data is retained for a maximum of 90 days</li>
+            <li>No data is shared with third parties</li>
+            <li>No data is sold or used for advertising</li>
+        </ul>
+        
+        <h2>Your Rights and Controls</h2>
+        <p>You have complete control over your data:</p>
+        <ol>
+            <li><strong>Opt-in Only</strong>: Telemetry is disabled by default</li>
+            <li><strong>Enable/Disable</strong>: Toggle telemetry at any time in Advanced Settings</li>
+            <li><strong>Selective Tracking</strong>: Choose which metrics to share</li>
+            <li><strong>Local Processing</strong>: All microphone operations happen locally on your device</li>
+        </ol>
+        
+        <h2>Local Data Storage</h2>
+        <p>MicSwitcher stores the following data locally on your device:</p>
+        <ul>
+            <li>Microphone priority preferences</li>
+            <li>Application settings</li>
+            <li>Device history (for auto-switching)</li>
+        </ul>
+        <p>This data never leaves your device unless telemetry is explicitly enabled.</p>
+        
+        <h2>Children's Privacy</h2>
+        <p>MicSwitcher does not knowingly collect information from children under 13 years of age.</p>
+        
+        <h2>Changes to This Policy</h2>
+        <p>We may update this privacy policy from time to time. Changes will be posted to this page with an updated revision date.</p>
+        
+        <h2>Contact</h2>
+        <p>For questions about this privacy policy or MicSwitcher's privacy practices, please create an issue on our <a href="https://github.com/matthiasg/mic-switcher">GitHub repository</a>.</p>
+        
+        <h2>Compliance</h2>
+        <p>MicSwitcher is designed to comply with:</p>
+        <ul>
+            <li>Apple's App Store Review Guidelines</li>
+            <li>General Data Protection Regulation (GDPR)</li>
+            <li>California Consumer Privacy Act (CCPA)</li>
+        </ul>
+        
+        <div class="footer">
+            <p>© 2025 Matthias Götzke. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

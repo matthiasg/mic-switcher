@@ -1,59 +1,68 @@
 # MicSwitcher
 
-A simple macOS menu bar application that makes switching between microphones effortless. Built because the native macOS microphone switching experience is cumbersome.
+A simple macOS menu bar app for quickly switching between audio input devices.
+
+## Why?
+
+I needed this. I switch microphones all the time - between my AirPods, webcam, external mics, etc. macOS makes you dig through System Settings every time. That's annoying.
+
+So I made this little menu bar app that lets you switch with two clicks. Problem solved.
 
 ## Features
 
-- **Menu Bar Integration**: Lives in your menu bar for quick access
-- **Real-time Monitoring**: Automatically detects when microphones are added or removed
-- **Smart Notifications**: Get notified when your microphone changes or new devices are detected
-- **Visual Feedback**: Clear checkmark indicator for the currently selected microphone
+- Lives in your menu bar
+- Shows all your microphones  
+- Switch with one click
+- Set priority order - higher priority mics auto-switch when connected
+- Remembers all devices you've ever used
+- No dock icon, no window clutter
 
 ## Installation
 
-### Building from Source
+### App Store
 
-1. Clone this repository
-2. Open `MicSwitcher.xcodeproj` in Xcode
-3. Build and run the project (⌘+R)
+Coming soon for ~ €1 (or whatever the minimum is in your region).
+
+### Build from Source
+
+```bash
+git clone https://github.com/matthiasg/mic-switcher.git
+cd mic-switcher
+open MicSwitcher.xcodeproj
+# Build and run in Xcode
+```
 
 ### Requirements
 
-- macOS 12.0 or later
+- macOS 15.5 or later
 - Xcode 14.0 or later (for building)
 
 ## Usage
 
-1. Launch the app - it will appear in your menu bar as a microphone icon
-2. Click the microphone icon to see all available input devices
-3. Select any microphone from the dropdown to switch to it
-4. The app will show a checkmark next to your currently active microphone
-5. Receive notifications when microphones are switched or devices are added/removed
+1. Click the mic icon in your menu bar
+2. Pick a microphone
+3. That's it
 
-## How It Works
-
-The app uses CoreAudio APIs to:
-
-- Monitor the system's default input device
-- Listen for audio device changes in real-time
-- Programmatically switch between available microphones
-- Provide system notifications and audio feedback
-
-## Development
-
-This project was entirely written by Grok 4 AI assistant, the README by Claude 4 sonnet. I just read over it and prompted it.
-
-### Key Components
-
-- **AppState**: Manages the current microphone state and handles notifications
-- **AudioMonitor**: Listens for system audio device changes
-- **MicMenuContent**: Provides the menu bar interface
-- **CoreAudio Integration**: Direct system-level microphone control
-
-## License
-
-See the LICENSE file for details.
+Want to set priorities? Click Settings and drag devices to reorder them. Top = highest priority.
 
 ## Contributing
 
-Feel free to submit issues and enhancement requests!
+Got ideas to make this better while keeping it simple? Found a bug? Pull requests are welcome!
+
+Issues without pull requests - I might read them, might not, depends on time. But PRs I'll definitely look at.
+
+## Built With
+
+Written with the help of Grok 4 and Claude. Because why not let AI help with the boring parts?
+
+## License
+
+MIT License - see LICENSE file.
+
+## Disclaimer
+
+This software is provided "as is", without warranty of any kind. I assume no liability for any damages arising from its use. Use at your own risk.
+
+## Author
+
+Matthias Götzke - Just someone who switches microphones too often. You can also find me at x.com/mgoetzke
