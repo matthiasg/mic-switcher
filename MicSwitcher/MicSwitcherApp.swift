@@ -46,11 +46,14 @@ class AppState: ObservableObject {
     private var audioMonitor: AudioMonitor?
     
     private init() {
+        print("[MicSwitcher] AppState initializing...")
         currentDefaultID = getDefaultInputDevice()
         let devices = getInputDevices()
         availableDevices = devices
         previousDevices = Set(devices.map { $0.id })
         loadDeviceHistory()
+        print("[MicSwitcher] Loaded device history: \(deviceHistory.map { $0.name })")
+        print("[MicSwitcher] Auto-switch enabled: \(autoSwitchEnabled)")
         setupAudioMonitor()
         
         // Defer device history update to avoid initialization issues
@@ -63,6 +66,7 @@ class AppState: ObservableObject {
             
             // Auto-switch on startup if enabled
             if self?.autoSwitchEnabled == true {
+                print("[MicSwitcher] Performing auto-switch on startup")
                 self?.performAutoSwitch()
             }
         }
@@ -127,8 +131,39 @@ class AppState: ObservableObject {
         audioMonitor = AudioMonitor(
             onDefaultChange: { [weak self] in
                 guard let self = self else { return }
-                self.currentDefaultID = getDefaultInputDevice()
-                self.sendNotification(message: "Microphone switched to \(getDeviceName(for: self.currentDefaultID) ?? "Unknown")")
+                let newDefaultID = getDefaultInputDevice()
+                let newDeviceName = getDeviceName(for: newDefaultID) ?? "Unknown"
+                let oldDeviceName = getDeviceName(for: self.currentDefaultID) ?? "Unknown"
+                
+                print("[Default Changed] System changed default from '\(oldDeviceName)' (ID: \(self.currentDefaultID)) to '\(newDeviceName)' (ID: \(newDefaultID))")
+                
+                // If auto-switch is enabled and system changed to a non-preferred device, switch back
+                if self.autoSwitchEnabled && newDefaultID != self.currentDefaultID {
+                    let currentDevices = getInputDevices()
+                    if let bestDevice = self.findBestDevice(from: currentDevices) {
+                        if bestDevice.id != newDefaultID {
+                            print("[Default Changed] System selected non-preferred device. Switching back to '\(bestDevice.name)'")
+                            // Small delay to let the system finish its switching
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                setDefaultInputDevice(bestDevice.id)
+                                self.currentDefaultID = bestDevice.id
+                                self.sendNotification(message: "Auto-switched back to preferred microphone: \(bestDevice.name)")
+                                TelemetryManager.shared.incrementCounter(.microphoneSwitchesAuto)
+                                TelemetryManager.shared.incrementCounter(.microphoneSwitches)
+                            }
+                        } else {
+                            // System switched to best device, just update our tracking
+                            self.currentDefaultID = newDefaultID
+                            self.sendNotification(message: "Microphone switched to \(newDeviceName)")
+                        }
+                    }
+                } else {
+                    // Auto-switch disabled or we initiated this change
+                    self.currentDefaultID = newDefaultID
+                    if newDefaultID != self.currentDefaultID {
+                        self.sendNotification(message: "Microphone switched to \(newDeviceName)")
+                    }
+                }
             },
             onDevicesChange: { [weak self] in
                 guard let self = self else { return }
@@ -145,23 +180,34 @@ class AppState: ObservableObject {
                 }
                 for id in added {
                     let deviceName = getDeviceName(for: id) ?? "Unknown"
+                    print("[Device Added] New device: '\(deviceName)'")
                     self.sendNotification(message: "New microphone detected: \(deviceName)")
                     // Update gauge for connected devices
                     TelemetryManager.shared.setGauge(.connectedDevices, value: Double(newDevices.count))
                     
                     // Auto-switch if this is a preferred device and auto-switch is enabled
-                    if self.autoSwitchEnabled && self.shouldAutoSwitch(to: deviceName, currentDevices: newDevices) {
-                        // Switch to the best available device instead of the newly connected one
+                    if self.autoSwitchEnabled {
+                        print("[Device Added] Auto-switch is enabled, checking if we should switch")
+                        // Always re-evaluate and switch to the best available device
                         if let bestDevice = self.findBestDevice(from: newDevices) {
+                            let actualCurrentID = getDefaultInputDevice()
+                            let currentName = getDeviceName(for: actualCurrentID) ?? "Unknown"
+                            print("[Device Added] Current device ID stored: \(self.currentDefaultID), Actual: \(actualCurrentID), Name: '\(currentName)'")
+                            
                             // Only switch and notify if the device is actually different
-                            if bestDevice.id != self.currentDefaultID {
+                            if bestDevice.id != actualCurrentID {
+                                print("[Device Added] Switching from '\(currentName)' to best device: '\(bestDevice.name)'")
                                 setDefaultInputDevice(bestDevice.id)
                                 self.currentDefaultID = bestDevice.id
                                 self.sendNotification(message: "Auto-switched to preferred microphone: \(bestDevice.name)")
                                 TelemetryManager.shared.incrementCounter(.microphoneSwitchesAuto)
                                 TelemetryManager.shared.incrementCounter(.microphoneSwitches)
+                            } else {
+                                print("[Device Added] Best device '\(bestDevice.name)' is already selected (ID: \(bestDevice.id))")
                             }
                         }
+                    } else {
+                        print("[Device Added] Auto-switch is disabled")
                     }
                 }
                 
@@ -171,10 +217,12 @@ class AppState: ObservableObject {
                 // Check if default needs update (e.g., if current default was removed)
                 let current = getDefaultInputDevice()
                 if !newIDs.contains(current) && self.autoSwitchEnabled {
+                    print("[Device Removed] Current default device was removed, finding fallback")
                     // Try to switch to the best available preferred device
                     if let bestDevice = self.findBestDevice(from: newDevices) {
                         // Only switch and notify if the device is actually different
                         if bestDevice.id != self.currentDefaultID {
+                            print("[Device Removed] Switching to fallback device: '\(bestDevice.name)'")
                             setDefaultInputDevice(bestDevice.id)
                             self.currentDefaultID = bestDevice.id
                             self.sendNotification(message: "Switched to fallback microphone: \(bestDevice.name)")
@@ -193,24 +241,38 @@ class AppState: ObservableObject {
     
     func shouldAutoSwitch(to deviceName: String, currentDevices: [(id: AudioDeviceID, name: String)]) -> Bool {
         // Find indices in device history (priority order)
-        guard let newDeviceIndex = deviceHistory.firstIndex(where: { $0.name == deviceName }) else { return false }
+        guard let newDeviceIndex = deviceHistory.firstIndex(where: { $0.name == deviceName }) else {
+            print("[AutoSwitch] Device '\(deviceName)' not found in history")
+            return false
+        }
         
         // Get current device name
         let currentDeviceName = getDeviceName(for: currentDefaultID) ?? ""
+        print("[AutoSwitch] New device: '\(deviceName)' (priority \(newDeviceIndex + 1)), Current device: '\(currentDeviceName)'")
         
         // If current device is also in history, only switch if new device has higher priority (lower index)
         if let currentIndex = deviceHistory.firstIndex(where: { $0.name == currentDeviceName }) {
-            return newDeviceIndex < currentIndex
+            let shouldSwitch = newDeviceIndex < currentIndex
+            print("[AutoSwitch] Current device priority: \(currentIndex + 1), Should switch: \(shouldSwitch)")
+            return shouldSwitch
         }
         
         // If current device is not in history, always switch to a device in history
+        print("[AutoSwitch] Current device not in history, switching to device in history")
         return true
     }
     
     func findBestDevice(from devices: [(id: AudioDeviceID, name: String)]) -> (id: AudioDeviceID, name: String)? {
+        print("[FindBest] Device history order:")
+        for (index, device) in deviceHistory.enumerated() {
+            print("[FindBest]   \(index + 1). \(device.name)")
+        }
+        print("[FindBest] Available devices: \(devices.map { $0.name })")
+        
         // Find the highest priority device that's currently available
-        for historyDevice in deviceHistory {
+        for (index, historyDevice) in deviceHistory.enumerated() {
             if let device = devices.first(where: { $0.name == historyDevice.name }) {
+                print("[FindBest] Found best device: '\(device.name)' at priority \(index + 1)")
                 return device
             }
         }
@@ -344,6 +406,11 @@ struct MicMenuContent: View {
                     setDefaultInputDevice(device.id)
                     state.currentDefaultID = device.id
                     state.sendNotification(message: "Manually switched to \(device.name)")
+                    // Disable auto-switch when manually selecting a device
+                    if state.autoSwitchEnabled {
+                        state.autoSwitchEnabled = false
+                        print("[Manual Switch] Auto-switch disabled due to manual selection")
+                    }
                     TelemetryManager.shared.incrementCounter(.microphoneSwitchesManual)
                     TelemetryManager.shared.incrementCounter(.microphoneSwitches)
                 }
