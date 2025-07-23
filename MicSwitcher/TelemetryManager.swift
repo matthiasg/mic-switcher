@@ -209,7 +209,7 @@ class TelemetryManager: ObservableObject {
                 "resource": [
                     "attributes": [
                         ["key": "service.name", "value": ["stringValue": "MicSwitcher"]],
-                        ["key": "service.version", "value": ["stringValue": "1.0.0"]],
+                        ["key": "service.version", "value": ["stringValue": Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"]],
                         ["key": "device.id", "value": ["stringValue": deviceHash]]
                     ]
                 ],
