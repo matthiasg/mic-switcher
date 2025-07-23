@@ -151,11 +151,17 @@ class AppState: ObservableObject {
                     
                     // Auto-switch if this is a preferred device and auto-switch is enabled
                     if self.autoSwitchEnabled && self.shouldAutoSwitch(to: deviceName, currentDevices: newDevices) {
-                        setDefaultInputDevice(id)
-                        self.currentDefaultID = id
-                        self.sendNotification(message: "Auto-switched to preferred microphone: \(deviceName)")
-                        TelemetryManager.shared.incrementCounter(.microphoneSwitchesAuto)
-                        TelemetryManager.shared.incrementCounter(.microphoneSwitches)
+                        // Switch to the best available device instead of the newly connected one
+                        if let bestDevice = self.findBestDevice(from: newDevices) {
+                            // Only switch and notify if the device is actually different
+                            if bestDevice.id != self.currentDefaultID {
+                                setDefaultInputDevice(bestDevice.id)
+                                self.currentDefaultID = bestDevice.id
+                                self.sendNotification(message: "Auto-switched to preferred microphone: \(bestDevice.name)")
+                                TelemetryManager.shared.incrementCounter(.microphoneSwitchesAuto)
+                                TelemetryManager.shared.incrementCounter(.microphoneSwitches)
+                            }
+                        }
                     }
                 }
                 
@@ -167,9 +173,12 @@ class AppState: ObservableObject {
                 if !newIDs.contains(current) && self.autoSwitchEnabled {
                     // Try to switch to the best available preferred device
                     if let bestDevice = self.findBestDevice(from: newDevices) {
-                        setDefaultInputDevice(bestDevice.id)
-                        self.currentDefaultID = bestDevice.id
-                        self.sendNotification(message: "Switched to fallback microphone: \(bestDevice.name)")
+                        // Only switch and notify if the device is actually different
+                        if bestDevice.id != self.currentDefaultID {
+                            setDefaultInputDevice(bestDevice.id)
+                            self.currentDefaultID = bestDevice.id
+                            self.sendNotification(message: "Switched to fallback microphone: \(bestDevice.name)")
+                        }
                     }
                 }
             }
